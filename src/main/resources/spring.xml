@@ -6,21 +6,21 @@
 
 <!-- bean definitions here -->
     <!--    beans are objects managed by spring framework-->
-    <bean id="alien" class="com.telusko.Alien">
+    <bean id="alien" class="com.telusko.Alien" autowire="byType">
 <!--        setting values through property tag-->
-<!--        <property name="age" value="21"></property>-->
-        <property name="lap" ref="lap1"/>  <!-- here we pass bean id as reference -->
+        <property name="age" value="21"/>
+<!--        <property name="comp" ref="comp1"/>  &lt;!&ndash; here we pass bean id as reference &ndash;&gt;-->
 
         <!--        using constructor to set the value-->
 <!--        <constructor-arg value="21"/>-->
 <!--        <constructor-arg ref="lap1"/>-->
 <!--        getting values using index we dont have to worry about sequence-->
 
-        <constructor-arg index="1" ref="lap1"/>
-        <constructor-arg index="0" value="21"/>
+<!--        <constructor-arg index="1" ref="lap1"/>-->
+<!--        <constructor-arg index="0" value="21"/>-->
     </bean>
 
-    <bean id="lap1" class="com.telusko.Laptop">
-    </bean>
+    <bean id="comp1" class="com.telusko.Laptop" primary="true"/>
+    <bean id="comp" class="com.telusko.Desktop"/>
 
 </beans>
