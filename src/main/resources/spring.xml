@@ -9,7 +9,9 @@
     <bean id="alien" class="com.telusko.Alien" autowire="byType">
 <!--        setting values through property tag-->
         <property name="age" value="21"/>
-        <property name="comp" ref="comp1"/>  <!-- here we pass bean id as reference -->
+        <property name="comp">
+            <bean id="comp1" class="com.telusko.Laptop" primary="true"/>
+        </property>  <!-- here we pass bean id as reference -->
 
         <!--        using constructor to set the value-->
 <!--        <constructor-arg value="21"/>-->
@@ -20,7 +22,7 @@
 <!--        <constructor-arg index="0" value="21"/>-->
     </bean>
 
-    <bean id="comp1" class="com.telusko.Laptop" primary="true"/>
-    <bean class="com.telusko.Desktop" lazy-init="true"/> <!-- object will be created only when we need it since we used lazy-init -->
+<!--    <bean id="comp1" class="com.telusko.Laptop" primary="true"/>-->
+<!--    <bean class="com.telusko.Desktop" lazy-init="true"/> &lt;!&ndash; object will be created only when we need it since we used lazy-init &ndash;&gt;-->
 
 </beans>
