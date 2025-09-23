@@ -16,5 +16,7 @@ public class App
 //        obj.setAge(12);
         System.out.println(obj.getAge());
         obj.code();
+
+        Desktop obj1= (Desktop) context.getBean("comp2");
     }
 }
