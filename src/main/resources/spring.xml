@@ -21,6 +21,6 @@
     </bean>
 
     <bean id="comp1" class="com.telusko.Laptop" primary="true"/>
-    <bean id="comp2" class="com.telusko.Desktop" lazy-init="true"/> <!-- object will be created only when we need it since we used lazy-init -->
+    <bean class="com.telusko.Desktop" lazy-init="true"/> <!-- object will be created only when we need it since we used lazy-init -->
 
 </beans>
